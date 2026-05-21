@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Помогать просто!</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+
+<!-- ========= NAV ========= -->
+<div class="nav-veil" aria-hidden="true"></div>
+<div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
+<nav class="nav">
+  <div class="nav-inner" id="navShell">
+    <div class="nav-top">
+      <a class="logo" href="#"><img class="logo-mark" src="assets/stoloto-icon.svg" alt="" aria-hidden="true">Помогать&nbsp;просто!</a>
+      <div class="nav-tabs">
+        <a href="volunteers.html" class="nav-tab">Волонтёрам</a>
+        <a href="funds.html" class="nav-tab">Фондам</a>
+        <a href="help.html" class="nav-tab">База знаний</a>
+      </div>
+      <a href="https://prod-charity.loventy.ru" class="nav-cta-text" target="_blank" rel="noopener">Открыть веб-версию</a>
+      <button class="nav-burger" id="navBurger" aria-label="Меню" type="button">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-mobile-panel" id="navMobilePanel" aria-hidden="true">
+      <div class="nav-mobile-inner">
+        <a href="https://max.ru/id263524490954_1_bot" class="mobile-cta" target="_blank" rel="noopener">Открыть в MAX</a>
+        <a href="volunteers.html">Волонтёрам</a>
+        <a href="funds.html">Фондам</a>
+        <a href="help.html">База знаний</a>
+        <a href="https://prod-charity.loventy.ru" class="mobile-cta" target="_blank" rel="noopener">Открыть веб-версию</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ========= FIRST BLOCK: Counter + Phone with video ========= -->
+<section class="kind-block">
+  <div class="wrap">
+    <div class="kind-grid">
+
+      <!-- LEFT: kindness counter -->
+      <div class="kind-counter">
+        <div class="kind-number" id="kindNumber" aria-label="Часов помощи всего"></div>
+
+        <h2 class="kind-title">Часов добра подарили волонтеры</h2>
+
+        <div class="kind-blocks">
+          <p>Спасибо за то, что делаете этот мир теплее</p>
+          <p>Присоединяйтесь — ваш час тоже окажется в счётчике!</p>
+        </div>
+
+        <div class="kind-ctas">
+          <a href="https://prod-charity.loventy.ru" class="btn btn-grad btn-lg" target="_blank" rel="noopener">Открыть веб-версию</a>
+          <a href="https://max.ru/id263524490954_1_bot" class="btn btn-ghost btn-lg" target="_blank" rel="noopener">Открыть в MAX</a>
+        </div>
+      </div>
+
+      <!-- RIGHT: phone with video (user-inserted) -->
+      <div class="kind-phone">
+        <div class="ph-big">
+          <div class="ph-screen">
+            <video class="kind-video" src="assets/video/raw/13.mp4" autoplay muted loop playsinline preload="auto"></video>
+            <div class="kind-video-ph">
+              <div class="kvp-mark">▶</div>
+              <div class="kvp-h">Загрузка видео</div>
+              <div class="kvp-sub">demo.mp4</div>
+              <div class="kvp-dashed">если не стартует, нажмите play</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<hr style="border:none;border-top:1px solid var(--line);margin:0 32px">
+
+<!-- ========= VIDEO FEATURE BLOCKS ========= -->
+<section id="features" class="feat-section">
+  <div class="wrap">
+
+    <!-- BLOCK 1: phone left, text right -->
+    <article class="feat-row">
+      <div class="feat-phone">
+        <div class="feat-ph">
+          <div class="feat-ph-screen">
+            <video src="assets/video/raw/1.mp4" muted loop playsinline preload="auto"></video>
+          </div>
+        </div>
+      </div>
+      <div class="feat-text">
+        <h3>Рулетка добра</h3>
+        <p>Не знаете, с чего начать? Рулетка добра подберёт задачу прямо сейчас — случайную, но точно по силам</p>
+      </div>
+    </article>
+
+    <!-- BLOCK 2: text left, phone right -->
+    <article class="feat-row feat-row-rev">
+      <div class="feat-phone">
+        <div class="feat-ph">
+          <div class="feat-ph-screen">
+            <video src="assets/video/raw/3.mp4" muted loop playsinline preload="auto"></video>
+          </div>
+        </div>
+      </div>
+      <div class="feat-text">
+        <h3>Уведомления<br/>в MAX</h3>
+        <p>Напоминания о предстоящих акциях, подтверждения от координаторов и новые подборки приходят прямо в MAX — ничего не пропустите</p>
+      </div>
+    </article>
+
+    <!-- BLOCK 3: phone left, text right -->
+    <article class="feat-row">
+      <div class="feat-phone">
+        <div class="feat-ph">
+          <div class="feat-ph-screen">
+            <video src="assets/video/raw/10.MP4" muted loop playsinline preload="auto"></video>
+          </div>
+        </div>
+      </div>
+      <div class="feat-text">
+        <h3>Внутренний<br/>магазин баллов</h3>
+        <p>За каждый час волонтёрства начисляются баллы. Обменивайте их на полезные призы и привилегии во внутреннем магазине — мотивация становится осязаемой</p>
+      </div>
+    </article>
+
+    <!-- BLOCK 4: text left, phone right -->
+    <article class="feat-row feat-row-rev">
+      <div class="feat-phone">
+        <div class="feat-ph">
+          <div class="feat-ph-screen">
+            <video src="assets/video/raw/11.mp4" muted loop playsinline preload="auto"></video>
+          </div>
+        </div>
+      </div>
+      <div class="feat-text">
+        <h3>Личный кабинет<br/>фонда</h3>
+        <p>Фонды публикуют задания, управляют записями и отслеживают участников прямо из приложения. Всё в одном месте — без лишней переписки и таблиц</p>
+      </div>
+    </article>
+
+    <!-- BLOCK 5: phone left, text right -->
+    <article class="feat-row">
+      <div class="feat-phone">
+        <div class="feat-ph">
+          <div class="feat-ph-screen">
+            <video src="assets/video/raw/12.MP4" muted loop playsinline preload="auto"></video>
+          </div>
+        </div>
+      </div>
+      <div class="feat-text">
+        <h3>Администрирование<br/>и аналитика</h3>
+        <p>Полный контроль над акциями, участниками и статистикой. Модерируйте заявки, назначайте координаторов и следите за прогрессом в реальном времени</p>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ========= FINAL CTA ========= -->
+<section class="section" id="open" style="padding-top:0;padding-bottom:80px">
+  <div class="wrap">
+    <div class="final">
+      <div class="final-inner">
+        <span class="kicker">Начните сейчас</span>
+        <h2 class="display">Помогать —<br/>и правда <em>просто.</em></h2>
+        <p>Откройте приложение в браузере — через пару минут вы записаны на первую акцию. Без установок и обещаний себе «с понедельника»</p>
+        <div class="final-ctas">
+          <a href="https://prod-charity.loventy.ru" class="btn btn-dark btn-lg" target="_blank" rel="noopener">Открыть веб-версию</a>
+        </div>
+        <div class="final-meta">бесплатно · без установки · работает в браузере</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========= FOOTER ========= -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-col">
+        <p class="foot-about">Открытая платформа для волонтёров и фондов. Делаем так, чтобы желание помочь не упиралось в «не знаю, с чего начать»</p>
+        <div class="foot-socials">
+          <a href="https://max.ru/id263524490954_1_bot" class="foot-social-btn" target="_blank" rel="noopener">MAX</a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h6>Волонтёрам</h6>
+        <a href="help.html#volunteers">Возможности</a>
+        <a href="help.html#volunteers">Карта акций</a>
+        <a href="help.html#volunteers">Команды</a>
+        <a href="help.html#volunteers">Сертификаты</a>
+      </div>
+      <div class="foot-col">
+        <h6>Фондам</h6>
+        <a href="help.html#orgs">Добавить организацию</a>
+        <a href="help.html#orgs">Размещение акций</a>
+        <a href="help.html#orgs">Корпоративные программы</a>
+        <a href="help.html#contact">Контакты для партнёров</a>
+      </div>
+      <div class="foot-col">
+        <h6>Помощь</h6>
+        <a href="help.html">База знаний</a>
+        <a href="help.html#contact">Связаться с поддержкой</a>
+        <a href="help.html#safety">Безопасность</a>
+        <a href="agreement.html">Документы</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 «Помогать просто». АНО «Помогать просто», ОГРН 1207700000000.</span>
+      <div class="links">
+        <a href="privacy.html">Политика конфиденциальности</a>
+        <a href="agreement.html">Соглашение</a>
+        <a href="cookies.html">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ========= MOBILE STICKY CTA ========= -->
+<div class="mob-cta-bar" aria-hidden="true">
+  <a href="https://prod-charity.loventy.ru" class="btn btn-grad btn-lg mob-cta-btn" target="_blank" rel="noopener">Открыть веб-версию</a>
+</div>
+
+<script src="scripts/main.js" defer></script>
+
+</body>
+</html>

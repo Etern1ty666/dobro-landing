@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Фондам и НКО — Помогать просто!</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="styles/legal.css"/>
+<style>
+  /* ---- hero ---- */
+  .f-hero{padding:112px 0 72px;text-align:center}
+  .f-hero .kicker{display:inline-block;background:var(--yellow);color:var(--ink);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:4px 14px;border-radius:999px;margin-bottom:20px;font-family:"Manrope",sans-serif}
+  .f-hero h1{font-family:"Onest",sans-serif;font-size:clamp(36px,6vw,58px);font-weight:800;letter-spacing:-0.03em;line-height:1.05;margin:0 0 20px;color:var(--ink)}
+  .f-hero p{font-size:18px;color:var(--ink-2);max-width:520px;margin:0 auto 36px;line-height:1.65}
+  .f-hero-ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+  /* ---- shared button styles ---- */
+  .btn{display:inline-flex;align-items:center;justify-content:center;font-family:"Onest",sans-serif;font-weight:700;font-size:16px;height:52px;padding:0 28px;border-radius:999px;text-decoration:none;transition:filter .15s,opacity .15s;white-space:nowrap;border:0;cursor:pointer}
+  .btn-grad{background:linear-gradient(135deg,#FFE45C 0%,var(--yellow) 38%,#FFB800 100%);color:var(--ink);box-shadow:0 8px 20px -6px rgba(229,191,0,.5)}
+  .btn-grad:hover{filter:brightness(1.06);opacity:1}
+  .btn-ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line-2)}
+  .btn-ghost:hover{border-color:var(--ink);opacity:1}
+
+  /* ---- steps (horizontal timeline) ---- */
+  .f-steps-wrap{max-width:960px;margin:0 auto;padding:0 32px 0}
+  .f-steps-title{font-family:"Onest",sans-serif;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-3);text-align:center;margin:0 0 48px}
+  .f-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+  .f-steps::before{content:"";position:absolute;top:27px;left:calc(12.5% + 20px);right:calc(12.5% + 20px);height:2px;background:var(--line-2);z-index:0}
+  .f-step{display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 12px;position:relative;z-index:1;cursor:pointer}
+  .f-step-num{width:56px;height:56px;border-radius:50%;background:var(--bg-2);border:2px solid var(--line-2);color:var(--ink-3);font-family:"Onest",sans-serif;font-weight:800;font-size:20px;display:grid;place-items:center;margin-bottom:16px;flex-shrink:0;transition:background .22s,border-color .22s,color .22s,box-shadow .22s}
+  .f-step:hover .f-step-num{border-color:var(--yellow);color:var(--ink);background:#fff}
+  .f-step.active .f-step-num{background:var(--yellow);border-color:var(--yellow);color:var(--ink);box-shadow:0 0 0 6px var(--bg)}
+  .f-step h4{font-family:"Onest",sans-serif;font-size:15px;font-weight:700;letter-spacing:-0.01em;margin:0 0 6px;color:var(--ink-2);transition:color .2s}
+  .f-step.active h4{color:var(--ink)}
+  .f-step p{font-size:13px;color:var(--ink-3);line-height:1.5;margin:0;transition:color .2s}
+  .f-step.active p{color:var(--ink-2)}
+
+  /* detail panel */
+  .f-step-detail{max-width:960px;margin:0 auto;padding:0 32px}
+  .f-step-detail-inner{background:var(--yellow-tint);border-radius:20px;padding:24px 28px;font-size:15px;color:var(--ink-2);line-height:1.65;margin-top:28px;margin-bottom:64px;transition:opacity .25s ease}
+
+  /* ---- section wrapper ---- */
+  .f-section{max-width:960px;margin:0 auto;padding:0 32px 72px}
+  .f-section-title{font-family:"Onest",sans-serif;font-size:26px;font-weight:800;letter-spacing:-0.025em;margin:0 0 8px;color:var(--ink)}
+  .f-section-sub{font-size:15px;color:var(--ink-2);margin:0 0 32px;line-height:1.6}
+
+  /* ---- docs block ---- */
+  .f-docs{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:72px}
+  .f-docs-col{background:var(--bg-2);border-radius:24px;padding:32px 36px}
+  .f-docs-col h4{font-family:"Onest",sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-3);margin:0 0 20px}
+  .f-docs-list{display:flex;flex-direction:column;gap:12px;margin:0;padding:0;list-style:none}
+  .f-docs-list li{display:flex;align-items:flex-start;gap:12px;font-size:15px;color:var(--ink-2);line-height:1.5}
+  .f-docs-list li::before{content:"";width:20px;height:20px;border-radius:50%;background:var(--yellow);flex-shrink:0;margin-top:2px;display:block}
+
+  /* ---- cards ---- */
+  .f-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:72px}
+  .f-card{background:var(--bg-2);border-radius:24px;padding:28px;display:flex;flex-direction:column;gap:14px}
+  .f-card-icon{width:48px;height:48px;border-radius:14px;background:var(--yellow);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .f-card h5{font-family:"Onest",sans-serif;font-size:17px;font-weight:700;letter-spacing:-0.02em;margin:0;color:var(--ink)}
+  .f-card p{font-size:14px;color:var(--ink-2);line-height:1.6;margin:0}
+
+  /* ---- divider ---- */
+  .f-divider{max-width:960px;margin:0 auto 72px;padding:0 32px;border-top:1px solid var(--line)}
+
+  /* ---- final CTA ---- */
+  .f-final{max-width:960px;margin:0 auto 80px;padding:0 32px}
+  .f-final-inner{background:var(--ink);border-radius:32px;padding:56px 48px;text-align:center;color:#fff}
+  .f-final-inner h2{font-family:"Onest",sans-serif;font-size:clamp(26px,4vw,40px);font-weight:800;letter-spacing:-0.03em;line-height:1.05;margin:0 0 14px}
+  .f-final-inner p{font-size:16px;opacity:.7;max-width:440px;margin:0 auto 28px;line-height:1.6}
+  .f-final-ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .btn-light{background:#fff;color:var(--ink)}
+  .btn-light:hover{filter:brightness(.96);opacity:1}
+  .btn-outline-white{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.3)}
+  .btn-outline-white:hover{border-color:rgba(255,255,255,.7);opacity:1}
+
+  @media(max-width:819px){
+    .f-hero{padding:96px 18px 48px}
+    .f-steps-wrap,.f-step-detail,.f-section,.f-final{padding-left:18px;padding-right:18px}
+    .f-steps{grid-template-columns:1fr 1fr;gap:20px 8px}
+    .f-steps::before{display:none}
+    .f-step p{display:none}
+    .f-step-detail-inner{padding:18px 20px}
+    .f-docs{grid-template-columns:1fr;padding-left:18px;padding-right:18px}
+    .f-docs-col{padding:24px 20px}
+    .f-cards{grid-template-columns:1fr;padding-left:18px;padding-right:18px}
+    .f-final-inner{padding:36px 20px;border-radius:24px}
+    .f-final-ctas{flex-direction:column;align-items:stretch}
+    .f-final-ctas .btn{width:100%}
+  }
+</style>
+</head>
+<body>
+
+<div class="nav-veil" aria-hidden="true"></div>
+<div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
+<nav class="nav">
+  <div class="nav-inner" id="navShell">
+    <div class="nav-top">
+      <a class="logo" href="index.html"><img class="logo-mark" src="assets/stoloto-icon.svg" alt="" aria-hidden="true">Помогать&nbsp;просто!</a>
+      <div class="nav-tabs">
+        <a href="volunteers.html" class="nav-tab">Волонтёрам</a>
+        <a href="funds.html" class="nav-tab" style="color:var(--ink)">Фондам</a>
+        <a href="help.html" class="nav-tab">База знаний</a>
+      </div>
+      <a href="https://prod-charity.loventy.ru" class="nav-cta-text" target="_blank" rel="noopener">Открыть веб-версию</a>
+      <button class="nav-burger" id="navBurger" aria-label="Меню" type="button">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-mobile-panel" id="navMobilePanel" aria-hidden="true">
+      <div class="nav-mobile-inner">
+        <a href="volunteers.html">Волонтёрам</a>
+        <a href="funds.html">Фондам</a>
+        <a href="help.html">База знаний</a>
+        <a href="https://prod-charity.loventy.ru" class="mobile-cta" target="_blank" rel="noopener">Открыть веб-версию</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="f-hero">
+  <span class="kicker">Фондам и НКО</span>
+  <h1>Волонтёры —<br/>без лишней бюрократии</h1>
+  <p>Разместите акцию, получите проверенных добровольцев и закройте смену в пару кликов.</p>
+  <div class="f-hero-ctas">
+    <a href="index.html#open" class="btn btn-grad">Подать заявку фонда</a>
+    <a href="help.html#orgs" class="btn btn-ghost">Инструкция для НКО</a>
+  </div>
+</section>
+
+<!-- STEPS -->
+<div class="f-steps-wrap">
+  <p class="f-steps-title">Путь от заявки до первой акции</p>
+  <div class="f-steps" id="fundSteps">
+    <div class="f-step active" data-detail="Создайте профиль организации: укажите ОГРН, ИНН и контактное лицо. Это занимает около 5 минут.">
+      <div class="f-step-num">1</div>
+      <h4>Зарегистрируйте НКО</h4>
+      <p>ОГРН, ИНН, контактное лицо</p>
+    </div>
+    <div class="f-step" data-detail="Загрузите устав и выписку из ЕГРЮЛ (не старше 6 месяцев). Документы подаются один раз — повторно загружать при обновлении акций не нужно.">
+      <div class="f-step-num">2</div>
+      <h4>Подайте документы</h4>
+      <p>Устав и выписка из ЕГРЮЛ</p>
+    </div>
+    <div class="f-step" data-detail="Проверка занимает до 5 рабочих дней. Статус и комментарии модераторов видны в личном кабинете — не нужно ждать письма.">
+      <div class="f-step-num">3</div>
+      <h4>Верификация</h4>
+      <p>До 5 рабочих дней</p>
+    </div>
+    <div class="f-step" data-detail="Опубликуйте мероприятие — волонтёры видят его сразу. Они записываются сами, вам остаётся только подтвердить участие одним кликом.">
+      <div class="f-step-num">4</div>
+      <h4>Размещайте акции</h4>
+      <p>Волонтёры записываются сами</p>
+    </div>
+  </div>
+</div>
+<div class="f-step-detail">
+  <div class="f-step-detail-inner" id="fundStepDetail">Создайте профиль организации: укажите ОГРН, ИНН и контактное лицо. Это занимает около 5 минут.</div>
+</div>
+
+<!-- DOCS REQUIRED -->
+<div class="f-section">
+  <h2 class="f-section-title">Документы для регистрации</h2>
+  <p class="f-section-sub">Верификация защищает волонтёров — мы проверяем, что организация реальная. Вот что нужно подготовить.</p>
+</div>
+<div class="f-docs" style="max-width:960px;margin:0 auto;padding:0 32px;margin-bottom:72px">
+  <div class="f-docs-col">
+    <h4>Что загрузить</h4>
+    <ul class="f-docs-list">
+      <li>Устав организации (PDF)</li>
+      <li>Выписка из ЕГРЮЛ (не старше 6 месяцев)</li>
+      <li>ИНН и ОГРН</li>
+      <li>Контактное лицо — ФИО и должность</li>
+      <li>Официальный e-mail организации</li>
+    </ul>
+  </div>
+  <div class="f-docs-col">
+    <h4>После верификации вы получите</h4>
+    <ul class="f-docs-list">
+      <li>Подтверждённый значок НКО в профиле</li>
+      <li>Неограниченное количество акций</li>
+      <li>Статистику и выгрузку отчётов</li>
+      <li>Приоритет в ленте волонтёров</li>
+      <li>Поддержку менеджера платформы</li>
+    </ul>
+  </div>
+</div>
+
+<!-- BENEFITS -->
+<div class="f-section">
+  <h2 class="f-section-title">Инструменты для организаций</h2>
+  <p class="f-section-sub">Всё, что нужно для управления волонтёрскими программами — в одном месте.</p>
+  <div class="f-cards">
+    <div class="f-card">
+      <div class="f-card-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h5>Автоматические отчёты</h5>
+      <p>Часы, количество участников и сертификаты — выгружаются в один клик для отчётности в Минюст и грантодателям.</p>
+    </div>
+    <div class="f-card">
+      <div class="f-card-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6 6 0 10-12 0v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h5>Умные уведомления</h5>
+      <p>Напоминания волонтёрам, подтверждение явки и уведомление об отмене — всё автоматически, без вашего участия.</p>
+    </div>
+    <div class="f-card">
+      <div class="f-card-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h5>Быстрый старт</h5>
+      <p>Первая акция выходит в ленту сразу после верификации — аудитория платформы видит её мгновенно.</p>
+    </div>
+    <div class="f-card">
+      <div class="f-card-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h5>Управление командой</h5>
+      <p>Несколько координаторов на одну организацию. Распределяйте акции по ответственным — каждый видит свои задачи.</p>
+    </div>
+    <div class="f-card">
+      <div class="f-card-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h5>Аналитика и статистика</h5>
+      <p>Охват, активность волонтёров, динамика по месяцам. Понимайте, что работает, и улучшайте программы.</p>
+    </div>
+    <div class="f-card">
+      <div class="f-card-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h5>Чат с волонтёрами</h5>
+      <p>Общий чат акции, прямые сообщения. Координируйте участников прямо в платформе без сторонних мессенджеров.</p>
+    </div>
+  </div>
+</div>
+
+<div class="f-divider"></div>
+
+<!-- FINAL CTA -->
+<div class="f-final">
+  <div class="f-final-inner">
+    <h2>Готовы привлечь<br/>первых волонтёров?</h2>
+    <p>Зарегистрируйте организацию — первая акция выйдет в ленту после верификации.</p>
+    <div class="f-final-ctas">
+      <a href="index.html#open" class="btn btn-light">Подать заявку</a>
+      <a href="help.html#orgs" class="btn btn-outline-white">Инструкция для НКО</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-col">
+        <h6>Помогать просто!</h6>
+        <p class="foot-about">Открытая платформа для волонтёров и фондов. Делаем так, чтобы желание помочь не упиралось в «не знаю, с чего начать».</p>
+        <div class="foot-socials">
+          <a href="https://max.ru/id263524490954_1_bot" class="foot-social-btn" target="_blank" rel="noopener">MAX</a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h6>Волонтёрам</h6>
+        <a href="volunteers.html">О платформе</a>
+        <a href="help.html#volunteers">Карта акций</a>
+        <a href="help.html#volunteers">Команды</a>
+        <a href="help.html#volunteers">Сертификаты</a>
+      </div>
+      <div class="foot-col">
+        <h6>Фондам</h6>
+        <a href="funds.html">Для организаций</a>
+        <a href="help.html#orgs">Размещение акций</a>
+        <a href="help.html#orgs">Корпоративные программы</a>
+        <a href="help.html#contact">Контакты для партнёров</a>
+      </div>
+      <div class="foot-col">
+        <h6>Помощь</h6>
+        <a href="help.html">База знаний</a>
+        <a href="help.html#contact">Связаться с поддержкой</a>
+        <a href="help.html#safety">Безопасность</a>
+        <a href="agreement.html">Документы</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 «Помогать просто». АНО «Помогать просто», ОГРН 1207700000000.</span>
+      <div class="links">
+        <a href="privacy.html">Политика конфиденциальности</a>
+        <a href="agreement.html">Соглашение</a>
+        <a href="cookies.html">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="scripts/nav.js" defer></script>
+<script>
+(function(){
+  var detail = document.getElementById('fundStepDetail');
+  document.querySelectorAll('#fundSteps .f-step').forEach(function(step){
+    step.addEventListener('click', function(){
+      document.querySelectorAll('#fundSteps .f-step').forEach(function(s){ s.classList.remove('active'); });
+      step.classList.add('active');
+      detail.style.opacity = '0';
+      setTimeout(function(){ detail.textContent = step.dataset.detail; detail.style.opacity = '1'; }, 120);
+    });
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>База знаний — Помогать просто!</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="styles/legal.css"/>
+<style>
+  .kb-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-bottom:48px}
+  .kb-card{border:1px solid var(--line);border-radius:16px;padding:24px;text-decoration:none;color:var(--ink);transition:border-color .15s,box-shadow .15s;display:block}
+  .kb-card:hover{border-color:var(--yellow);box-shadow:0 4px 24px -8px rgba(255,214,10,.3)}
+  .kb-card-icon{width:44px;height:44px;margin-bottom:14px;display:flex;align-items:center;justify-content:center;background:var(--yellow-tint);border-radius:12px;color:var(--ink);flex-shrink:0}
+  .kb-card-icon svg{flex-shrink:0}
+  .kb-card h3{font-family:"Onest",sans-serif;font-size:16px;font-weight:700;margin:0 0 8px;letter-spacing:-0.01em}
+  .kb-card p{font-size:14px;color:var(--ink-3);margin:0;line-height:1.55}
+  .kb-section{margin-bottom:48px}
+  .kb-section h2{font-family:"Onest",sans-serif;font-size:22px;font-weight:700;letter-spacing:-0.02em;margin:0 0 20px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+  .faq{display:flex;flex-direction:column;gap:2px}
+  .faq-item{border-radius:12px;overflow:hidden}
+  .faq-item summary{list-style:none;padding:16px 20px;cursor:pointer;font-weight:600;font-size:15px;background:var(--bg-2);display:flex;justify-content:space-between;align-items:center;user-select:none}
+  .faq-item summary::-webkit-details-marker{display:none}
+  .faq-item summary::after{content:"+";font-size:20px;font-weight:300;color:var(--ink-3);transition:transform .2s}
+  .faq-item[open] summary::after{transform:rotate(45deg)}
+  .faq-item .faq-body{padding:16px 20px;font-size:14px;color:var(--ink-2);line-height:1.65;background:var(--bg-2);border-top:1px solid var(--line)}
+  .faq-item .faq-body p{margin:0 0 10px}
+  .faq-item .faq-body p:last-child{margin:0}
+  .contact-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+  .contact-card{border:1px solid var(--line);border-radius:14px;padding:20px;font-size:14px}
+  .contact-card strong{display:block;font-family:"Onest",sans-serif;font-weight:700;margin-bottom:6px}
+  .contact-card a{color:var(--ink-2);word-break:break-all}
+  .contact-card .badge{display:inline-block;background:var(--yellow);color:var(--ink);font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;margin-bottom:8px}
+</style>
+</head>
+<body>
+
+<div class="nav-veil" aria-hidden="true"></div>
+<div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
+<nav class="nav">
+  <div class="nav-inner" id="navShell">
+    <div class="nav-top">
+      <a class="logo" href="index.html"><img class="logo-mark" src="assets/stoloto-icon.svg" alt="" aria-hidden="true">Помогать&nbsp;просто!</a>
+      <div class="nav-tabs">
+        <a href="volunteers.html" class="nav-tab">Волонтёрам</a>
+        <a href="funds.html" class="nav-tab">Фондам</a>
+        <a href="help.html" class="nav-tab">База знаний</a>
+      </div>
+      <a href="https://prod-charity.loventy.ru" class="nav-cta-text" target="_blank" rel="noopener">Открыть веб-версию</a>
+      <button class="nav-burger" id="navBurger" aria-label="Меню" type="button">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-mobile-panel" id="navMobilePanel" aria-hidden="true">
+      <div class="nav-mobile-inner">
+        <a href="volunteers.html">Волонтёрам</a>
+        <a href="funds.html">Фондам</a>
+        <a href="help.html">База знаний</a>
+        <a href="https://prod-charity.loventy.ru" class="mobile-cta" target="_blank" rel="noopener">Открыть веб-версию</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="l-wrap">
+  <div class="l-hero">
+    <span class="l-badge">База знаний</span>
+    <h1>Как пользоваться платформой</h1>
+    <p class="l-meta">Ответы на частые вопросы, инструкции и контакты поддержки</p>
+  </div>
+
+  <!-- Quick links -->
+  <div class="kb-section">
+    <h2>Разделы</h2>
+    <div class="kb-grid">
+      <a href="#volunteers" class="kb-card">
+        <span class="kb-card-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </span>
+        <h3>Волонтёрам</h3>
+        <p>Как начать, записаться на акцию, получить сертификат</p>
+      </a>
+      <a href="#orgs" class="kb-card">
+        <span class="kb-card-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        </span>
+        <h3>Организациям и фондам</h3>
+        <p>Регистрация, верификация, размещение акций</p>
+      </a>
+      <a href="#safety" class="kb-card">
+        <span class="kb-card-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </span>
+        <h3>Безопасность</h3>
+        <p>Как мы защищаем данные и участников</p>
+      </a>
+      <a href="#account" class="kb-card">
+        <span class="kb-card-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        </span>
+        <h3>Аккаунт и настройки</h3>
+        <p>Профиль, уведомления, удаление аккаунта</p>
+      </a>
+      <a href="#faq" class="kb-card">
+        <span class="kb-card-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </span>
+        <h3>Частые вопросы</h3>
+        <p>Ответы на самые популярные вопросы</p>
+      </a>
+      <a href="#contact" class="kb-card">
+        <span class="kb-card-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </span>
+        <h3>Связаться с нами</h3>
+        <p>Поддержка, партнёрство, безопасность</p>
+      </a>
+    </div>
+  </div>
+
+  <div class="l-content">
+
+    <!-- VOLUNTEERS -->
+    <div class="kb-section">
+      <h2 id="volunteers">Волонтёрам</h2>
+      <h3>Как начать</h3>
+      <ol>
+        <li>Зарегистрируйтесь через Госуслуги или email.</li>
+        <li>Заполните профиль: навыки, интересы, доступность по времени.</li>
+        <li>Перейдите в раздел «Лента» — платформа покажет подходящие акции рядом.</li>
+        <li>Нажмите «Записаться», дождитесь подтверждения от координатора в чате.</li>
+        <li>Придите на акцию, выполните задание.</li>
+        <li>Координатор подтвердит участие — часы появятся в профиле.</li>
+      </ol>
+
+      <h3>Как получить сертификат</h3>
+      <p>Перейдите в Профиль → Сертификаты → Выбрать период → Скачать PDF. Сертификат содержит QR-код для проверки подлинности.</p>
+
+      <h3>Отмена записи</h3>
+      <p>Отменить запись можно в разделе «Мои дела» — кнопка «Отменить участие». Пожалуйста, делайте это заблаговременно (не менее чем за 24 часа), чтобы координатор успел найти замену.</p>
+
+      <h3>Рулетка добра</h3>
+      <p>Не знаете с чего начать? Нажмите кнопку «Рулетка добра» на главном экране — система предложит одну случайную акцию, которая подходит вам по навыкам и времени. Можно крутить снова, пока не найдёте что-то близкое.</p>
+    </div>
+
+    <!-- ORGS -->
+    <div class="kb-section">
+      <h2 id="orgs">Организациям и фондам</h2>
+      <h3>Регистрация и верификация</h3>
+      <ol>
+        <li>Создайте аккаунт организации на странице регистрации.</li>
+        <li>Заполните профиль: наименование, ОГРН/ИНН, юридический адрес, контакты.</li>
+        <li>Загрузите документы: устав, свидетельство о регистрации.</li>
+        <li>Дождитесь верификации — 5 рабочих дней. Вы получите email с результатом.</li>
+      </ol>
+      <div class="l-note">Верификация бесплатна. Мы проверяем организации вручную, чтобы волонтёры были уверены в надёжности партнёров.</div>
+
+      <h3>Размещение акции</h3>
+      <ol>
+        <li>Перейдите в раздел «Акции» → «Создать акцию».</li>
+        <li>Заполните: название, описание, адрес, дату и время, требования к волонтёрам, количество мест.</li>
+        <li>Назначьте ответственного координатора из числа сотрудников.</li>
+        <li>Опубликуйте — акция появится в ленте волонтёров.</li>
+      </ol>
+
+      <h3>После акции</h3>
+      <p>В течение 48 часов после окончания акции подтвердите участие каждого волонтёра в разделе «Управление акцией». Это необходимо для начисления часов и выдачи сертификатов.</p>
+
+      <h3>Правила безопасности для организаций</h3>
+      <ul>
+        <li>Обязательно проводите вводный инструктаж для волонтёров перед началом работы.</li>
+        <li>При работе с уязвимыми группами (пожилые, дети, люди с инвалидностью) — наличие ответственного сотрудника обязательно.</li>
+        <li>Оформите добровольческое соглашение согласно ст. 17.1 ФЗ-135.</li>
+        <li>Рекомендуем страховать волонтёров от несчастных случаев на период акции.</li>
+      </ul>
+    </div>
+
+    <!-- SAFETY -->
+    <div class="kb-section">
+      <h2 id="safety">Безопасность</h2>
+      <h3>Как мы защищаем данные</h3>
+      <ul>
+        <li>Все соединения — только HTTPS/TLS 1.3+.</li>
+        <li>Пароли хранятся в виде хэша (bcrypt), оригинал не сохраняется.</li>
+        <li>Данные верификации (СНИЛС) удаляются сразу после проверки.</li>
+        <li>Регулярные аудиты безопасности от независимых специалистов.</li>
+      </ul>
+
+      <h3>Признаки мошенничества</h3>
+      <div class="l-warn">Немедленно сообщите нам, если: вас просят перевести деньги за участие в акции; координатор просит встретиться вне официального места акции; организация запрашивает копии паспорта через мессенджер; вам предлагают вознаграждение за «привлечение» других волонтёров.</div>
+
+      <h3>Как пожаловаться</h3>
+      <p>Кнопка «Пожаловаться» доступна на странице любой акции, в профиле организации и в чате. Или напишите напрямую: <strong>safety@помогать-просто.рф</strong>. Все жалобы рассматриваются в течение 24 часов в рабочие дни.</p>
+    </div>
+
+    <!-- ACCOUNT -->
+    <div class="kb-section">
+      <h2 id="account">Аккаунт и настройки</h2>
+      <h3>Изменить данные профиля</h3>
+      <p>Профиль → Редактировать. Имя, фото, навыки, город, доступность — всё можно изменить в любой момент.</p>
+
+      <h3>Управление уведомлениями</h3>
+      <p>Профиль → Настройки → Уведомления. Можно отдельно включить/отключить: уведомления об акциях рядом, сообщения в чате, напоминания о предстоящих акциях.</p>
+
+      <h3>Удаление аккаунта</h3>
+      <p>Профиль → Настройки → Удалить аккаунт. После подтверждения данные удаляются в течение 30 дней. История участия в акциях сохраняется 5 лет для подтверждения выданных сертификатов.</p>
+
+      <h3>Забыли пароль</h3>
+      <p>На странице входа нажмите «Забыли пароль» → введите email → следуйте инструкции в письме. Если письмо не пришло — проверьте папку «Спам» или напишите в поддержку.</p>
+    </div>
+
+    <!-- FAQ -->
+    <div class="kb-section">
+      <h2 id="faq">Частые вопросы</h2>
+      <div class="faq">
+        <details class="faq-item">
+          <summary>Это бесплатно?</summary>
+          <div class="faq-body"><p>Да, полностью бесплатно для волонтёров. Для организаций базовый функционал тоже бесплатен. Мы некоммерческая организация.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Нужна ли регистрация для просмотра акций?</summary>
+          <div class="faq-body"><p>Просматривать акции можно без регистрации. Для записи — нужен аккаунт.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Мне 16 лет, могу ли я участвовать?</summary>
+          <div class="faq-body"><p>Да, с 14 лет — с согласия родителя или законного представителя. При регистрации укажите возраст, система запросит подтверждение от родителя.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Как работает подтверждение часов?</summary>
+          <div class="faq-body"><p>После акции координатор организации отмечает ваше участие в системе. Часы автоматически добавляются в ваш профиль. Если координатор не подтвердил участие в течение 72 часов — напишите в поддержку.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Примут ли мой сертификат в вузе или на работе?</summary>
+          <div class="faq-body"><p>Это зависит от конкретного учреждения. Наши сертификаты содержат QR-код для проверки подлинности и данные об организации. Мы рекомендуем уточнить у вуза или работодателя заранее.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Что такое верификация организации и зачем она нужна?</summary>
+          <div class="faq-body"><p>Мы проверяем юридическое существование организации (ОГРН/ИНН), наличие устава и реального контактного лица. Это защищает волонтёров от фиктивных акций и мошенничества.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Могу ли я предложить акцию, если я не организация?</summary>
+          <div class="faq-body"><p>Пока — нет. Акции могут размещать только верифицированные организации. Если у вас есть идея — свяжитесь с нами, мы поможем найти партнёрскую НКО.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Что если на акции что-то пошло не так?</summary>
+          <div class="faq-body">
+            <p>При угрозе жизни — звоните 112.</p>
+            <p>После инцидента — сообщите нам через кнопку «Пожаловаться» или на safety@помогать-просто.рф. Мы рассмотрим ситуацию и, при необходимости, заблокируем организацию.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="kb-section">
+      <h2 id="contact">Связаться с нами</h2>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <span class="badge">Поддержка</span>
+          <strong>Общие вопросы</strong>
+          <a href="mailto:support@помогать-просто.рф">support@помогать-просто.рф</a>
+          <p style="margin-top:8px;color:var(--ink-3)">Ответ в течение 24 часов в рабочие дни</p>
+        </div>
+        <div class="contact-card">
+          <span class="badge">Безопасность</span>
+          <strong>Жалобы и инциденты</strong>
+          <a href="mailto:safety@помогать-просто.рф">safety@помогать-просто.рф</a>
+          <p style="margin-top:8px;color:var(--ink-3)">Рассматриваем в течение 24 часов</p>
+        </div>
+        <div class="contact-card">
+          <span class="badge">Данные</span>
+          <strong>Персональные данные</strong>
+          <a href="mailto:privacy@помогать-просто.рф">privacy@помогать-просто.рф</a>
+          <p style="margin-top:8px;color:var(--ink-3)">Запросы по ФЗ-152 — до 30 дней</p>
+        </div>
+        <div class="contact-card">
+          <span class="badge">Партнёрство</span>
+          <strong>Для организаций</strong>
+          <a href="mailto:partners@помогать-просто.рф">partners@помогать-просто.рф</a>
+          <p style="margin-top:8px;color:var(--ink-3)">Верификация, корп. программы</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-col">
+        <p class="foot-about">Открытая платформа для волонтёров и фондов. Делаем так, чтобы желание помочь не упиралось в «не знаю, с чего начать».</p>
+        <div class="foot-socials">
+          <a href="https://max.ru/id263524490954_1_bot" class="foot-social-btn" target="_blank" rel="noopener">MAX</a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h6>Волонтёрам</h6>
+        <a href="help.html#volunteers">Возможности</a>
+        <a href="help.html#volunteers">Карта акций</a>
+        <a href="help.html#volunteers">Команды</a>
+        <a href="help.html#volunteers">Сертификаты</a>
+      </div>
+      <div class="foot-col">
+        <h6>Фондам</h6>
+        <a href="help.html#orgs">Добавить организацию</a>
+        <a href="help.html#orgs">Размещение акций</a>
+        <a href="help.html#orgs">Корпоративные программы</a>
+        <a href="help.html#contact">Контакты для партнёров</a>
+      </div>
+      <div class="foot-col">
+        <h6>Помощь</h6>
+        <a href="help.html">База знаний</a>
+        <a href="help.html#contact">Связаться с поддержкой</a>
+        <a href="help.html#safety">Безопасность</a>
+        <a href="agreement.html">Документы</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 «Помогать просто». АНО «Помогать просто», ОГРН 1207700000000.</span>
+      <div class="links">
+        <a href="privacy.html">Политика конфиденциальности</a>
+        <a href="agreement.html">Соглашение</a>
+        <a href="cookies.html">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="scripts/nav.js" defer></script>
+</body>
+</html>
